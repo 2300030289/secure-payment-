@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #04101a;
+  color: #e8f3fb;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #06121d;
+}
+::-webkit-scrollbar-thumb {
+  background: #173a55;
+  border-radius: 999px;
+  border: 2px solid #06121d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1f4d6e;
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(145deg, rgba(11, 32, 48, 0.85), rgba(8, 26, 40, 0.65));
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(31, 77, 110, 0.35);
+  }
+  .input-field {
+    @apply w-full rounded-xl bg-ink-900/80 border border-ink-700/70 px-4 py-3 text-sm text-slate-100 placeholder-slate-500 transition focus:border-brand-400/70 focus:outline-none focus:ring-2 focus:ring-brand-500/30;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-2.5 text-sm font-semibold text-ink-950 shadow-glow transition hover:bg-brand-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink-600/60 bg-ink-800/40 px-4 py-2.5 text-sm font-medium text-slate-200 transition hover:border-ink-500 hover:bg-ink-700/40 active:scale-[0.98];
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(31, 77, 110, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(31, 77, 110, 0.12) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #6ce1f9, #22ccee 40%, #0892b3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
